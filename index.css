@@ -1,0 +1,325 @@
+.container-body {
+  padding: 10px 0;
+  color: rgb(34, 77, 66);
+  font-weight: 300;
+  overflow: hidden;
+  min-height: 100vh;
+  max-height: 240vh;
+}
+
+.container {
+  min-width: 90vw;
+  max-width: 1170px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow: hidden;
+  position: relative;
+  min-height: 250vh;
+}
+
+.container h1 {
+  font-weight: 800;
+  color: rgb(34, 77, 66);
+}
+
+.container h2 {
+  font-weight: 500;
+}
+
+.container p {
+  font-size: 0.95rem;
+}
+
+form {
+  width: 100%;
+}
+
+.form-control {
+  width: 95%;
+  margin: 35px auto;
+}
+
+input,
+select {
+  width: 70%;
+  max-width: 80%;
+}
+
+.show-advanced {
+  outline: none;
+  text-decoration: underline;
+  border: none;
+  margin: 15px auto;
+  font-size: 0.85rem;
+  background: transparent;
+  color: rgb(55, 107, 94);
+  cursor: pointer;
+  display: block;
+}
+
+select {
+  padding: 6px;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgb(34, 77, 66);
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgb(34, 77, 66);
+}
+
+.divider {
+  display: none;
+  width: 70%;
+  margin: 15px auto;
+  height: 1px;
+  background: rgb(34, 77, 66);
+}
+.hidden-fields {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.btn-submit {
+  background: rgb(34, 77, 66);
+  color: white;
+  outline: none;
+  text-decoration: underline;
+  border: none;
+  margin: 15px auto;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.btn-submit:hover {
+  background: rgb(55, 107, 94);
+}
+
+.calc_values {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(0.5);
+  z-index: 99999;
+  display: none;
+  background-color: #fff;
+  padding: 8px 0;
+  transition: all 1s ease-in-out;
+  min-height: 100vh;
+}
+
+.calc_values.show_now {
+  transform: scale(1);
+  display: block;
+}
+
+.calc_info {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.calc_info p {
+  font-style: bold;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  line-height: 1.65rem;
+  font-size: 0.95rem;
+}
+
+#table {
+  overflow-x: auto;
+  width: 90%;
+  height: auto;
+  margin: 10px auto 0 auto;
+  color: black;
+}
+
+#table_aside {
+  overflow-x: auto;
+  width: 90%;
+  height: auto;
+  margin: 30px auto 0 auto;
+  font-weight: lighter;
+  border: 0.5px solid rgb(55, 107, 94);
+  color: black;
+  overflow: hidden;
+}
+
+#table_p {
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+}
+#table_p p {
+  margin: 10px 0;
+  font-size: 0.75rem;
+  padding: 0 10px 0 8px;
+}
+#table_p p .num {
+  font-size: 0.7rem;
+  margin-right: 9px;
+}
+
+table {
+  border: 1px solid rgb(55, 107, 94);
+  margin: 10px auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+tr {
+  padding: 7px;
+  border: 1px solid rgb(55, 107, 94);
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  width: 40%;
+  border-collapse: collapse;
+  border: 1px solid rgb(55, 107, 94);
+  border-top: none;
+  border-bottom: none;
+  border-collapse: collapse;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.table_right {
+  text-align: right;
+}
+
+td .flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+td .details {
+  font-size: 0.9rem;
+}
+
+.table_bold {
+  font-size: 0.99rem;
+  font-weight: bolder;
+  color: black;
+}
+
+.danger {
+  font-weight: bolder;
+  color: red;
+}
+
+.success {
+  font-weight: bolder;
+  color: green;
+}
+
+.reset {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  margin: 20px auto;
+  font-size: 0.85rem;
+  background: transparent;
+  color: rgb(30, 61, 53);
+  cursor: pointer;
+  display: block;
+  text-transform: capitalize;
+}
+
+.icon {
+  font-size: 0.85rem;
+  margin-right: 8px;
+  color: rgb(30, 61, 53);
+}
+
+@media screen and (min-width: 880px) {
+  .container-body {
+    padding: 30px 0;
+    max-height: 200vh;
+  }
+  .container {
+    min-width: 60vw;
+    max-width: 1000px;
+    padding: 0 20px;
+  }
+
+  .form-controls {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .form-control {
+    width: 35%;
+    margin: 0;
+    align-self: center;
+  }
+  .form-center {
+    margin: 0 auto;
+  }
+  .show-advanced {
+    margin-top: 20px;
+  }
+  .btn-submit {
+    margin-top: 25px;
+  }
+
+  .divider {
+    width: 60%;
+    margin: 35px auto;
+  }
+
+  .calc_info {
+    min-height: 100vh;
+  }
+
+  .calc_info p {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    line-height: 1.7rem;
+  }
+  #table {
+    overflow-x: auto;
+    width: 30%;
+    max-width: 30%;
+    height: auto;
+    margin: 5px auto 0 auto;
+  }
+  #table_aside {
+    width: 65%;
+    max-width: 65%;
+    height: auto;
+    margin: 50px auto 0 auto;
+    color: black;
+  }
+  #table table {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  td {
+    max-width: 35%;
+  }
+}

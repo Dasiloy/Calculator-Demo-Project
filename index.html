@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <title>Development calculator</title>
+  </head>
+  <body>
+    <!--container for whole page-->
+    <div class="container-body">
+      <!--container for the form-->
+      <div class="container">
+        <h2>how much will a development make?</h2>
+        <p>
+          Our development calculator combines construction
+          cost data with real-time market data on values per
+          square foot to help you estimate how much profit a
+          development will make.
+        </p>
+
+        <!--form inputs-->
+        <form name="form_calculator">
+          <!--form flexbox-->
+          <div class="form-controls">
+            <!--two inputs -->
+            <div class="form-control">
+              <label for="postcode"> full postcode</label>
+              <br />
+              <input
+                id="postcode"
+                type="text"
+                name="post_code"
+                class="calc-inputs"
+              />
+            </div>
+            <div class="form-control">
+              <label for="purchase_price">
+                purchase price</label
+              >
+              <br />
+              <input
+                id="purchase_price"
+                type="text"
+                name="purchase_price"
+                class="calc-inputs"
+                value="&#163;0"
+              />
+            </div>
+          </div>
+
+          <!--form flexbox-->
+          <div class="form-controls">
+            <!--two inputs -->
+            <div class="form-control">
+              <label for="pre_development">
+                Sq. feet pre-development</label
+              >
+              <br />
+              <input
+                id="pre_development"
+                type="number"
+                name="pre_development"
+                class="calc-inputs"
+              />
+            </div>
+            <div class="form-control">
+              <label for="post_development">
+                Sq. feet post-development</label
+              >
+              <br />
+              <input
+                id="post_development"
+                type="number"
+                name="post_development"
+                class="calc-inputs"
+              />
+            </div>
+          </div>
+
+          <!--form flexbox-->
+          <div class="form-controls">
+            <!--two inputs -->
+            <div class="form-control">
+              <label for="project_type">
+                project type</label
+              >
+              <br />
+              <select name="project_type" id="project_type">
+                <option value="refublish / extend" selected>
+                  refublish / extend
+                </option>
+                <option value="demolish / new build">
+                  Demolish / new build
+                </option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="property_type">
+                property type</label
+              >
+              <br />
+              <select
+                name="property_type"
+                id="property_type"
+              >
+                <option value="house" selected>
+                  house
+                </option>
+                <option value="blocks of flats">
+                  blocks of flats
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!--single select box-->
+          <div class="form-control form-center">
+            <label for="finished_quality">
+              finished quality</label
+            >
+            <br />
+            <select
+              name="property_type"
+              id="finished_quality"
+            >
+              <option value="premium standard">
+                premium standard
+              </option>
+              <option value="medium standard" selected>
+                medium standard
+              </option>
+              <option value="basic standard">
+                basic standard
+              </option>
+            </select>
+          </div>
+
+          <!--show hidden  fields-->
+          <button
+            class="show-advanced"
+            id="show_more"
+            type="button"
+          >
+            show advanced options
+          </button>
+
+          <!-- hidden fields-->
+          <div class="divider" id="divider"></div>
+
+          <div id="hidden_fields" class="hidden-fields">
+            <!--form flexbox-->
+            <div class="form-controls">
+              <!--two inputs -->
+              <div class="form-control">
+                <label for="stamp_duty">
+                  Add additional rate stamp duty</label
+                >
+                <br />
+                <select name="stamp_duty" id="stamp_duty">
+                  <option value="yes" selected>yes</option>
+                  <option value="no">no</option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label for="architect">
+                  Architect / management fees</label
+                >
+                <br />
+                <select name="architect" id="architect">
+                  <option value="0%">0%</option>
+                  <option value="1%">1%</option>
+                  <option value="2%">2%</option>
+                  <option value="3%">3%</option>
+                  <option value="4%">4%</option>
+                  <option value="5%">5%</option>
+                  <option value="6%">6%</option>
+                  <option value="7%">7%</option>
+                  <option value="8%">8%</option>
+                  <option value="9%">9%</option>
+                  <option value="10%">10%</option>
+                  <option value="11%" selected>11%</option>
+                  <option value="12%">12%</option>
+                  <option value="13%">13%</option>
+                  <option value="14%">14%</option>
+                  <option value="15%">15%</option>
+                  <option value="16%">16%</option>
+                </select>
+              </div>
+            </div>
+
+            <!--form flexbox-->
+            <div class="form-controls">
+              <!--two inputs -->
+              <div class="form-control">
+                <label for="legals"> cost of legals</label>
+                <br />
+                <select name="legals" id="legals">
+                  <option value="&#163;3000">
+                    &#163;3000
+                  </option>
+                  <option value="&#163;3500">
+                    &#163;3500
+                  </option>
+                  <option value="&#163;4000">
+                    &#163;4000
+                  </option>
+                  <option value="&#163;4500">
+                    &#163;4500
+                  </option>
+                  <option value="&#163;5000" selected>
+                    &#163;5000
+                  </option>
+                  <option value="&#163;5500">
+                    &#163;5500
+                  </option>
+                  <option value="&#163;6000">
+                    &#163;6000
+                  </option>
+                  <option value="&#163;6500">
+                    &#163;6500
+                  </option>
+                  <option value="&#163;7000">
+                    &#163;7000
+                  </option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label for="contingency">
+                  contingency</label
+                >
+                <br />
+                <select name="contingency" id="contingency">
+                  <option value="0%">0%</option>
+                  <option value="1%">1%</option>
+                  <option value="2%">2%</option>
+                  <option value="3%">3%</option>
+                  <option value="4%" selected>4%</option>
+                  <option value="5%">5%</option>
+                  <option value="6%">6%</option>
+                  <option value="7%">7%</option>
+                  <option value="8%">8%</option>
+                  <option value="9%">9%</option>
+                  <option value="10%">10%</option>
+                  <option value="11%">11%</option>
+                  <option value="12%">12%</option>
+                  <option value="13%">13%</option>
+                  <option value="14%">14%</option>
+                  <option value="15%">15%</option>
+                  <option value="16%">16%</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-controls">
+              <!--two inputs -->
+              <div class="form-control">
+                <label for="finance_cost">
+                  finance cost</label
+                >
+                <br />
+                <select
+                  name="finanace cost"
+                  id="finance_cost"
+                >
+                  <option value="0%">0%</option>
+                  <option value="1%">1%</option>
+                  <option value="2%">2%</option>
+                  <option value="3%">3%</option>
+                  <option value="4%" selected>4%</option>
+                  <option value="5%">5%</option>
+                  <option value="6%">6%</option>
+                  <option value="7%">7%</option>
+                  <option value="8%">8%</option>
+                  <option value="9%">9%</option>
+                  <option value="10%">10%</option>
+                  <option value="11%">11%</option>
+                  <option value="12%">12%</option>
+                  <option value="13%">13%</option>
+                  <option value="14%">14%</option>
+                  <option value="15%">15%</option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label for="gdv">
+                  manually override gdv</label
+                >
+                <br />
+                <input
+                  id="gdv"
+                  type="text"
+                  name="gdv"
+                  class="calc-inputs"
+                  value="&#163;0"
+                />
+              </div>
+            </div>
+
+            <div class="form-control form-center">
+              <label for="com_infrastructure">
+                Community Infrastructure Levy:</label
+              >
+              <br />
+              <input
+                id="com"
+                type="text"
+                name="com_infrastructure"
+                class="calc-inputs"
+                value="&#163;0"
+              />
+            </div>
+          </div>
+          <button
+            class="btn-submit"
+            type="submit"
+            id="btn_submit"
+          >
+            calculate
+          </button>
+
+          <div class="calc_values" id="calc_values">
+            <h2>
+              How much profit will a development make?
+            </h2>
+            <div class="div calc_info">
+              <p>
+                Our development calculator combines
+                construction cost data with real-time market
+                data on values per square foot to help you
+                estimate how much profit a development will
+                make.
+              </p>
+              <div id="table">
+                <div id="table_1"></div>
+              </div>
+              <div id="table">
+                <div id="table_2"></div>
+              </div>
+              <div id="table">
+                <div id="table_3"></div>
+              </div>
+              <div id="table">
+                <div id="table_4"></div>
+              <button
+                type="reset"
+                id="reset_btn"
+                class="reset"
+              >
+                <i
+                  class="fa fa-pencil-square-o icon"
+                  aria-hidden="true"
+                ></i>
+                change inputs
+              </button>
+            </div>
+
+            <div id="table_aside">
+              <div id="table_p">
+                <p>
+                  <span class="num">1</span
+                  ><span id="p_1"></span>
+                </p>
+                <p>
+                  <span class="num">2</span
+                  ><span id="p_2"></span>
+                </p>
+                <p>
+                  <span class="num">3</span
+                  ><span id="p_3"></span>
+                </p>
+                <p>
+                  <span class="num">4</span
+                  ><span id="p_4"></span>
+                </p>
+                <p>
+                  <span class="num">5</span
+                  ><span id="p_5"></span>
+                </p>
+                <p>
+                  <span class="num">6</span
+                  ><span id="p_6"></span>
+                </p>
+                <p>
+                  <span class="num">7</span
+                  ><span id="p_7"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
